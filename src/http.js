@@ -1,4 +1,4 @@
-const hostURL = "http://localhost:3000/place-picker/";
+const hostURL = "https://combined-express-portfolio.vercel.app//place-picker/";
 
 export default async function fetchAvailablePlaces() {
 	const res = await fetch(hostURL + 'places');
