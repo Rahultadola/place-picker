@@ -13,14 +13,19 @@ export default async function fetchAvailablePlaces() {
 
 
 export async function fetchUserPlaces() {
-	const res = await fetch(hostURL + 'user-places');
-    const response = await res.json()
+	try {
+		const res = await fetch(hostURL + 'user-places');
+	    const response = await res.json()
 
-    if(!res.ok) {
-		throw new Error('Server Error!')
-    }
+	    if(!res.ok) {
+			throw new Error('Server Error!')
+	    }
+	    console.log(response)
 
-    return response.places
+	    return response.places
+	} catch(err) {
+		return []
+	}
 }
 
 
